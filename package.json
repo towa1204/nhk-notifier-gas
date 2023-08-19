@@ -1,0 +1,29 @@
+{
+  "name": "nhk-notify-gas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --noEmit && node build.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "esbuild": "0.19.2",
+    "nhk-program-connect": "github:towa1204/NHKProgramConnect"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/google-apps-script": "^1.0.67",
+    "@types/node": "^20.4.9",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "esbuild-gas-plugin": "^0.6.0",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "prettier": "^2.7.1",
+    "typescript": "^5.1.6"
+  }
+}
