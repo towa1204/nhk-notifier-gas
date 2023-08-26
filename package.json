@@ -4,8 +4,9 @@
   "description": "",
   "main": "main.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc --noEmit && node build.js"
+    "build": "tsc --noEmit && node build.js",
+    "test": "npx jest",
+    "push": "npm run build && clasp push"
   },
   "author": "",
   "license": "MIT",
