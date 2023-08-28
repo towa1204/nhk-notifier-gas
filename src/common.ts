@@ -1,6 +1,9 @@
 import { Program, UserProgramListReq } from 'nhk-program-connect';
 import { ResponseError } from 'nhk-program-connect/src/internal/exception';
 
+/**
+ * ISO8601形式の2つの時間から放映時間を表す文字列 MM/DD hh:mm ~ MM/DD hh:mm に変換
+ */
 export function convertToNotifyTimeFormat(beginTime: string, endTime: string) {
   const options: Intl.DateTimeFormatOptions = { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' };
   const date1 = new Date(beginTime);
@@ -12,6 +15,9 @@ export function convertToNotifyTimeFormat(beginTime: string, endTime: string) {
   return formattedBeginTime + ' ~ ' + formattedEndTime;
 }
 
+/**
+ * 番組情報を通知用の形式に変換
+ */
 export function convertMessages(programs: Program[]): string {
   return programs
     .map((programs, i) => {
@@ -21,6 +27,9 @@ export function convertMessages(programs: Program[]): string {
     .join('\n\n');
 }
 
+/**
+ * 与えられた文字列をLINEに通知
+ */
 export function postMessages(messages: string) {
   const prop = PropertiesService.getScriptProperties().getProperties();
 
